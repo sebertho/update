@@ -1,0 +1,8 @@
+steps:
+    - name: 'gcr.io/cloud-builders/docker'
+      args: ['build', '-t', 'gcr.io/projet-group-a/result-bertho','./result']
+    - name: 'gcr.io/cloud-builders/docker'
+      args: ['build', '-t', 'gcr.io/projet-group-a/worker-bertho','./worker']
+    - name: 'gcr.io/cloud-builders/docker'
+      args: ['build', '-t', 'gcr.io/projet-group-a/vote-bertho','./vote']
+images: ['gcr.io/projet-group-a/vote-bertho', 'gcr.io/projet-group-a/worker-bertho', 'gcr.io/projet-group-a/result-bertho']
